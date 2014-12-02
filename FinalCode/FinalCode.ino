@@ -36,7 +36,8 @@ const int servoPin = 2;
 const int ultrasonicPin = 10;
 const int rightMotorPin = 11;
 const int leftMotorPin = 12;
-
+const int RH_FORWARD = 3;
+const int RH_REVERSE = 4;
 
 //Non-constant global variables
 Servo myServo;
@@ -200,6 +201,7 @@ void turnTo(float turnDegrees) {
   else turnRight(turnDegrees);
 }
 
+//turns right 90 degrees
 void turnRight() {
   Serial.print("FIRST METHOD: turning right"); Serial.println(circleMod(marker.theta)); Serial.print(marker.x); Serial.print(" "); Serial.println(marker.y);
   rf.sendMessage("turning right");
@@ -303,6 +305,15 @@ long ultrasonicDistance() {
   // convert the time into a distance
   //distance is returned in millimeters
   return microsecondsToCentimeters(duration)/10;
+}
+
+//TODO write method to turn forward and backward
+void turnRightForward() {
+
+}
+
+void turnRightBackward() {
+
 }
 
 //Code I might need later
